@@ -1,3 +1,6 @@
+
+const {Recipe, Diet} = require('../api/src/db')
+
 //                       _oo0oo_
 //                      o8888888o
 //                      88" . "88
@@ -25,4 +28,25 @@ conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
+
+  // const probar = async() =>{
+  //   const pasta = await Recipe.create({
+  //     sourceName: 'pasta tomate',
+  //     title: 'pasta tomate',
+  //     score: 10,
+  //     healtScore: 3,
+  //     instructions: ''
+  //   })
+  //   console.log(pasta)
+  //   const ndieta = await Diet.create({name: 'g'})
+
+  //   await ndieta.addRecipe(pasta);
+  // }
+
+  // probar()
+
+
+
+  
+
 });
