@@ -124,7 +124,7 @@ module.exports = {
             name: r.name,
             summary: r.summary,
             score: r.score,
-            healtScore: r.healtScore,
+            healthScore: r.healthScore,
             instructions: r.instructions,
         })
         if(r.diets.length > 0){
