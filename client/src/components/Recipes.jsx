@@ -1,9 +1,10 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect} from "react";
 import { useSelector}  from 'react-redux'
 //import { getRecipes } from "../actions";
 import CardRecipe from "./CardRecipe";
 
-export default function Recipes (props){
+export default function Recipes (){
+    
     const allRecipes = useSelector(state => state.recipes)
 
     //const [recipes, setRecipes] = useState(props.recipes);
@@ -14,9 +15,7 @@ export default function Recipes (props){
         console.log('Renderin Recipes')
     },[])
 
-    // useEffect(()=>{
-    //     console.log('renderizando Recipes')
-    // },[recipes])
+    
 
     return (
         <div className="Recipes" >

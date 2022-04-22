@@ -4,15 +4,15 @@ const allTypes = [
     'Gluten Free',
     'Ketogenic',
     'Vegetarian',
-    'Lacto-Vegetarian',
-    'Ovo-Vegetarian',
+    'Lacto Ovo Vegetarian',
     'Vegan',
-    'Pescetarian',
+    'Pescatarian',
     'Paleo',
+    'Paleolithic',
     'Primal',
-    'Low FODMAP',
-    'Whole30',
-    'Dairy Free'
+    'Whole 30',
+    'Dairy Free',
+    'Foodmap Friendly'
 ]
 
 
