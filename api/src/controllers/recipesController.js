@@ -82,12 +82,12 @@ module.exports = {
                 }
             });
 
-            const dbResultsResume = dbResults.map(r => ({id:r.id, name: r.name, diets: r.diets.map(d=> d.name)}))
+            const dbResultsResume = dbResults.map(r => ({id:r.id, name: r.name,score:r.score , diets: r.diets.map(d=> d.name)}))
             
             const apiResults = recipesMatch.data.results.filter(r => (r.title.includes(name) || r.title.includes(nameCapitalized)) );
-            const apiResultsC = apiResults.map(r => ({id: r.id, name: r.title, img:r.image, diets:r.diets}))
+            const apiResultsC = apiResults.map(r => ({id: r.id, name: r.title, img:r.image,score: r.spoonacularScore , diets:r.diets}))
             if (apiResults.length < 1 && dbResults.length < 1) {
-                res.send(`Nothing match with ${name}`)
+                res.json({msg: `Nothing match with ${name}`})
             }else{
                 
                 const allResults = [...dbResultsResume, ...apiResultsC];
@@ -107,9 +107,9 @@ module.exports = {
                     through: {attributes: []}
             }});
             
-            const dbResultsResume = dbResults.map(r => ({id:r.id, name: r.name, diets: r.diets.map(d=> d.name)}))
+            const dbResultsResume = dbResults.map(r => ({id:r.id, name: r.name, score: r.score, diets: r.diets.map(d=> d.name)}))
             const apiResults = recipesMatch.data.results;
-            const apiResultsC = apiResults.map(r => ({id: r.id, name: r.title, img:r.image, diets:r.diets}))          
+            const apiResultsC = apiResults.map(r => ({id: r.id, name: r.title, img:r.image, score: r.spoonacularScore,diets:r.diets}))          
             const allResults = [...dbResultsResume, ...apiResultsC];
             res.json(allResults)
                 
