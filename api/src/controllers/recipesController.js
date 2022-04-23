@@ -30,6 +30,7 @@ module.exports = {
             console.log(id, API_KEY)
             const recipe = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`);
             const recipeInfo = {
+                id: recipe.data.id,
                 img: recipe.data.image,
                 name: recipe.data.title,
                 dishTypes: recipe.data.dishTypes,
@@ -48,6 +49,7 @@ module.exports = {
                 const diets = dietsArray.map(d => d.name)
                 // const diets = getDiets(id);
                 const recipeInfo = {
+                    id: dbRecipe.id,
                     name: dbRecipe.name,
                     dishTypes: dbRecipe.dishTypes,
                     diets: diets,

@@ -22,11 +22,29 @@ export const getRecipesMatch = (name) => async dispatch => {
     try{
         // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
         const recipes = await axios.get(`http://localhost:3001/recipes?name=${name}`)
-        console.log('accion get recipes')
+        console.log('accion get match recipes')
         console.log(recipes.data)
         dispatch( {
             type: 'GET_RECIPES_MATCH',
             payload: recipes.data
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
+
+}
+
+export const getRecipeInfo = (id) => async dispatch => {
+    
+    try{
+        // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
+        const info = await axios.get(`http://localhost:3001/recipes/${id}`)
+        console.log('accion get recipe info')
+        console.log(info.data)
+        dispatch( {
+            type: 'GET_RECIPE_INFO',
+            payload: info.data
         })
     }
     catch(e){
