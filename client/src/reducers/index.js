@@ -4,7 +4,8 @@ const initialState = {
     recipes: [],
     diets: [],
     allRecipes: [],
-    info: []
+    info: [],
+    created: ''
 }
 
 function rootReducer(state = initialState, action) {
@@ -34,6 +35,11 @@ function rootReducer(state = initialState, action) {
             return{
                 ...state,
                 info: action.payload
+            }
+        case "POST_RECIPE":
+            return{
+                ...state,
+                created: action.payload
             }
         case 'SORT_BY_NAME':
             let sortedNames = [...state.recipes];
@@ -69,7 +75,7 @@ function rootReducer(state = initialState, action) {
                 let filterArray = (state.recipes.length > 1)?state.recipes:state.allRecipes;
                 action.payload.forEach(d => {
                     console.log(d.toLowerCase())
-                    filterArray = filterArray?.filter(r => r.diets.includes(d.toLowerCase()))
+                    filterArray = filterArray?.filter(r => r.diets.includes(d.toLowerCase()) || r.diets.includes(d))
                 });
                 if (filterArray.length < 1) {
                     filterArray = {msg: 'Noting matches'}

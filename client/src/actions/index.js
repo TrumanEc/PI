@@ -3,7 +3,6 @@ import axios from 'axios'
 export const getRecipes = () => async dispatch => {
     
     try{
-        // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
         const recipes = await axios.get('http://localhost:3001/recipes')
         console.log('accion get recipes')
         console.log(recipes)
@@ -20,7 +19,6 @@ export const getRecipes = () => async dispatch => {
 export const getRecipesMatch = (name) => async dispatch => {
     
     try{
-        // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
         const recipes = await axios.get(`http://localhost:3001/recipes?name=${name}`)
         console.log('accion get match recipes')
         console.log(recipes.data)
@@ -38,7 +36,6 @@ export const getRecipesMatch = (name) => async dispatch => {
 export const getRecipeInfo = (id) => async dispatch => {
     
     try{
-        // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
         const info = await axios.get(`http://localhost:3001/recipes/${id}`)
         console.log('accion get recipe info')
         console.log(info.data)
@@ -55,13 +52,30 @@ export const getRecipeInfo = (id) => async dispatch => {
 
 export const getTypes = () => async dispatch => {
     try{
-        // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
         const dietTypes = await axios.get(`http://localhost:3001/types`)
         console.log('accion get types')
         console.log(dietTypes)
         dispatch( {
             type: 'GET_TYPES',
             payload: dietTypes.data
+        })
+    }
+    catch(e){
+        console.log(e)
+    }
+
+}
+
+export const postRecipe = (newRecipe) => async dispatch => {
+    try{
+        // const recipes = (name) ? await axios.get(`http://localhost:3001/recipes?name=${name}`) : await axios.get(`http://localhost:3001/recipes`);
+        const recipe = await axios.post(`http://localhost:3001/recipes`, newRecipe)
+        console.log('accion post recipe')
+        console.log(recipe)
+        getRecipes();
+        dispatch( {
+            type: 'POST_RECIPE',
+            payload: recipe.data
         })
     }
     catch(e){

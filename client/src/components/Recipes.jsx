@@ -2,6 +2,7 @@ import React, { useEffect} from "react";
 import { useSelector}  from 'react-redux'
 //import { getRecipes } from "../actions";
 import CardRecipe from "./CardRecipe";
+import { Link } from "react-router-dom";
 
 export default function Recipes (){
     
@@ -19,6 +20,7 @@ export default function Recipes (){
 
     return (
         <div className="Recipes" >
+        <Link to='/createRecipe'> Create recipe </Link>
         <div>Recipes</div>
         {   
             (allRecipes.length > 0) ? allRecipes.map(r => {

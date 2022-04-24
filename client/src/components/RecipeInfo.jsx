@@ -37,13 +37,18 @@ export default function RecipeInfo(){
                     {
                         (recipe.dishTypes) ? 
                         recipe.dishTypes.map(d =>  { return <li key={d}>{d}</li>}) 
-                        : <li>No diets</li>
+                        : <li>No dish type</li>
                     }
                 </ul>
                 <h3>Score: {recipe.score}</h3>
                 <h3>Health Score: {recipe.healthScore}</h3>
-    
-                <p>{recipe.summary}</p>
+                
+                <h3>Summary</h3>
+                <div dangerouslySetInnerHTML={{ __html: recipe.summary }} />
+
+                <h3>Instructions</h3>
+                <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
+                
     
             </div>
         )
