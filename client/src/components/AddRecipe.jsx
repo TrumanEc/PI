@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { postRecipe } from '../actions';
 
+import s from "../styles/addRecipe.module.css";
+
 function validate(input) {
     let errors = {};
 
@@ -86,47 +88,73 @@ export default function AddRecipe() {
     }
 
     return (
-        <div className='addRecipe' style={{display: 'flex', flexDirection: 'column'}}>
-            <label> Name </label>
-            <input name='name' type='' onChange={e => handleChange(e)}></input>
-                {   errors.name && (<p className="danger">{errors.name}</p>)    }
-
-            <label> Score </label>
-            <input name='score' type='number' onChange={e => handleChange(e)}></input>
-                {   errors.score && (<p className="danger">{errors.score}</p>)    }
-
-            <label> Health Score </label>
-            <input name='healthScore' type='number' onChange={e => handleChange(e)}></input>
-                {   errors.healthScore && (<p className="danger">{errors.healthScore}</p>)    }
-
-            <label> Summary </label>
-            <input name='summary' type='' onChange={e => handleChange(e)}></input>
-                {   errors.summary && (<p className="danger">{errors.summary}</p>)    }
-
-            <label> Instructios </label>
-            <input name='instructions' type='' onChange={e => handleChange(e)}></input>
-                {   errors.instructions && (<p className="danger">{errors.instructions}</p>)    }
-
+        <div className={s.addRecipe} >
+            <div className={s.container}>
+            <div className={s.group}>
+                <input required className={s.input} name='name' type='' onChange={e => handleChange(e)}></input>
+                <span className={s.highlight}></span>
+                <span className={s.bar}></span>
+                <label> Name </label>
+                {   errors.name && (<p className={s.danger}>{errors.name}</p>)    }
+            </div>
+            
+            <div className={s.group}>
+                <input required className={s.input} name='score' type='number' onChange={e => handleChange(e)}></input>
+                <span className={s.highlight}></span>
+                <span className={s.bar}></span>
+                <label> Score </label>
+                {   errors.score && (<p className={s.danger}>{errors.score}</p>)    }
+            </div>
+            
+            <div className={s.group}>
+                <input required className={s.input} name='healthScore' type='number' onChange={e => handleChange(e)}></input>
+                <span className={s.highlight}></span>
+                <span className={s.bar}></span>
+                <label> Health Score </label>
+                {   errors.healthScore && (<p className={s.danger}>{errors.healthScore}</p>)    }
+            </div>
+            
+            <div className={s.group}>
+                <input required className={s.input} name='summary' type='' onChange={e => handleChange(e)}></input>
+                <span className={s.highlight}></span>
+                <span className={s.bar}></span>
+                <label> Summary </label>
+                {   errors.summary && (<p className={s.danger}>{errors.summary}</p>)    }
+            </div>
+            
+            <div className={s.group}>
+                <input required className={s.input} name='instructions' type='' onChange={e => handleChange(e)}></input>
+                <span className={s.highlight}></span>
+                <span className={s.bar}></span>
+                <label> Instructios </label>
+                {   errors.instructions && (<p className={s.danger}>{errors.instructions}</p>)    }
+            </div>
+            </div>
+            
+            
             <section>
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-                Diets
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <p className={s.title}>Diets</p>
+                <div className={s.diets}>
                     {types.map(d => {
                         return(
                             <div key={d.name}>
-                                <input type='checkbox' name="di" value={d.id} key={d.id} onChange={e=>handleChangeDiets(e)}/>
+                                <input className={s.checkbox} type='checkbox' name="di" value={d.id} key={d.id} onChange={e=>handleChangeDiets(e)}/>
                                 {d.name}
                             </div>
                         )}
                     )}
                     <div key='all'>
-                        <input type='checkbox' id='all' value='all' onChange={e=>handleChangeDiets(e)}/>
+                        <input className={s.checkbox} type='checkbox' id='all' value='all' onChange={e=>handleChangeDiets(e)}/>
                         No Diets
                     </div>
+                </div>
+                    
                 </div>
             </section>
             <button onClick={handleClick} disabled={errors === {} ? true : false} >Done</button>
             {
-                response && (<h2>{response.msg}</h2>)
+                response && (<h2 className={s.response}>{response.msg}</h2>)
             }
 
         </div>

@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 
 import Recipes from "./Recipes";
-import SearchInput from "./SearchInput";
 import Filters from "./Filters"
 import { useDispatch,useSelector}  from 'react-redux';
 import { getRecipes, getTypes } from "../actions";
 
+import s from '../styles/home.module.css'
 
 export default function Home(){
 
@@ -25,8 +25,7 @@ export default function Home(){
     },[])
 
     return (
-        <div className="home">
-            <SearchInput/>
+        <div className={s.home}>
             <Filters/>
             <Recipes/>
         </div>

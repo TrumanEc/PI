@@ -1,0 +1,66 @@
+.filters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem ;
+
+}
+
+.filters label{
+    margin: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: green;
+}
+
+.checkbox{
+    font-size: 1.1rem;
+    margin: .5rem 0;
+}
+
+.title{
+    font-weight: bold;
+
+    margin: 1rem 0;
+    color: green;
+    font-size: 1.3rem;
+}
+
+
+
+.filters select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3.5rem;
+    width: 15rem;
+    padding: 10px 38px 10px 16px;
+    background-size: 10px;
+    transition: border-color .1s ease-in-out,box-shadow .1s ease-in-out;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.filters select:hover {
+    border: 1px solid #999;
+}
+.filters select:focus {
+    border: 1px solid #999;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.2);
+    outline: none;
+}
+/* remove default arrow in IE */
+.filters select::-ms-expand {
+    display:none;
+}
+

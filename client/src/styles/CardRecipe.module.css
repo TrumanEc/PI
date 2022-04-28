@@ -1,0 +1,74 @@
+.card{
+    width: 20rem;
+    height: 27rem;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    contain: content;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+
+
+.diets{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.2rem;
+}
+
+.card img{
+    object-fit: contain;
+    
+}
+.card h3{
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: center;
+}
+
+.diets__title{
+    margin: 0;
+    font-style: italic;
+    color: #ccc;
+}
+
+.diet{
+    margin: 2px;
+    padding: 2px 5px;
+    color: white;
+    background-color: green;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+.info{
+    padding: 0.5rem 0.5rem;
+    object-fit: fill;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.score{
+    align-self: flex-end;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    width: 4rem;
+    border-radius: 1rem;
+    margin: 0.2rem;
+}
+.score__n{
+    color: white;
+    font-size: 1.2rem;
+}
+.card i{
+    
+    color: white;   
+}

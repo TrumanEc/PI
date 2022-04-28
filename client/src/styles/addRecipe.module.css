@@ -1,0 +1,213 @@
+.addRecipe {
+    margin: auto;
+    height: 80vh;
+    width: 30vw;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 3rem;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+
+}
+
+.danger {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    text-align: right;
+    color: red;
+
+}
+
+.diets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+
+.checkbox {
+
+    font-size: 1.1rem;
+    margin: 1rem 0.5rem;
+    margin-left: 2rem;
+}
+
+.title {
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #2EE59D;
+    font-size: 1.3rem;
+}
+
+/* inputs styles  ========================*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.group {
+    margin: 0 1rem;
+    position: relative;
+    margin-bottom: 45px;
+
+}
+
+.group input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #999;
+}
+
+.group input:focus {
+    outline: none;
+}
+
+/* LABEL ======================================= */
+.group label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+.group input:focus~label,
+.group input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #2EE59D;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #2EE59D;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+.group input:focus~.bar:before,
+.group input:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+.group input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #2EE59D;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #2EE59D;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #2EE59D;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+
+.addRecipe button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.addRecipe button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.addRecipe button:active {
+    transform: translateY(-1px);
+}
+
+.response{
+    color: #2EE59D;
+
+}

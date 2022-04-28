@@ -1,0 +1,206 @@
+:root {
+    --background-card: rgba(255, 255, 255, 0.696);
+}
+
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+    padding: 5rem 10rem;
+    background-image: url("https://besthqwallpapers.com/Uploads/31-3-2021/160353/thumb2-white-marble-texture-4k-white-marble-background-marble-texture-stone-texture.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+.container h1{
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 1rem;
+    padding: .1rem 1.5rem;
+    border: solid .4rem #744e30;
+    background-color: #744e30;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 3rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.section{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 2rem 0;
+
+}
+
+.img{
+border-radius: 1rem;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    object-fit: fill;
+}
+
+.section__info{
+    display: flex;
+    width: 30%;
+    padding: 2rem;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    justify-content: space-between;
+    background-color: var(--background-card);
+
+}
+
+.section__info h3{
+    color: green;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.section__info li{
+    font-size: 1rem;
+    margin: 0;
+	padding: .5rem 0 .5rem 2rem;
+    list-style: none;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 1.5rem;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-around;
+}
+
+.diet{
+	background-image: url("https://cdn.iconscout.com/icon/premium/png-256-thumb/diet-1506343-1275678.png");
+
+}
+
+.type{
+	background-image: url("https://cdn.pixabay.com/photo/2019/09/08/17/24/eat-4461470_1280.png");
+}
+
+.score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: gold;
+    width: 30%;
+    height: 2rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+
+.health{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: red;
+    width: 30%;
+    height: 2rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+
+.extra__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    margin: 1.5rem;
+    background-color: var(--background-card);
+
+}
+
+.extra__container h3{
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    color: green;
+    
+}
+
+
+.extra{
+    font-size: 1rem;
+    text-align: justify;
+
+}
+
+.extra li{
+    margin: 0;
+	padding: .5rem 0 .5rem 2rem;
+    list-style: none;
+	background-image: url("https://www.shareicon.net/data/512x512/2016/09/09/827435_food_512x512.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 1.5rem;
+}
+
+.extra a{
+    text-decoration: none;
+    color: black    ;
+}
+/* From uiverse.io by @alexroumi */
+.button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms
+}
+
+.button:hover {
+    color: #e8e8e8;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.loader{
+    background-image: url("https://besthqwallpapers.com/Uploads/31-3-2021/160353/thumb2-white-marble-texture-4k-white-marble-background-marble-texture-stone-texture.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 25%;
+    justify-content: center;
+}

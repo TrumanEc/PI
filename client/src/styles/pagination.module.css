@@ -1,0 +1,36 @@
+.pagination{
+    display: flex;
+    background-color: #f3f3f4;
+    justify-content: space-between;
+    width: 15%;
+    height: 3rem;
+    border-radius: 2rem;
+    padding: 0 .5rem;
+}
+
+
+.button {
+    background:none;
+    outline: none;
+    border: none;
+}
+
+.button:hover {
+    font-size: 2rem;
+}
+.button:active{
+    color: green;
+}
+
+
+
+.input{
+    width: 3rem;
+    padding-left: 1rem;
+    margin-right: .5rem;
+    border: none;
+    background: transparent;
+}
+.input:focus{
+    outline: none;
+}

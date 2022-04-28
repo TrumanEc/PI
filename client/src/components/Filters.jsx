@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { sortByScore, sortByName } from "../actions";
 import { filterDiets } from "../actions";
 
+import s from '../styles/filters.module.css'
+
 export default function Filters(){
 
     const dispatch = useDispatch();
@@ -58,8 +60,8 @@ export default function Filters(){
         }
     }
     return (
-        <div className="filters">
-            <section>
+        <div className={s.filters}>
+            <section className={s.section}>
                 <label htmlFor='name'>Sort by name</label>
                 <select name="nameFilter" id="name" onChange={e => handleChangeName(e)}>
                     <option value="">Elige una opción</option>
@@ -67,7 +69,7 @@ export default function Filters(){
                     <option value='ZA'>Z - A</option>
                 </select>
             </section>
-            <section>
+            <section className={s.section}>
                 <label htmlFor='score'>Sort by Score</label>
                 <select name="scoreFilter" id="score" onChange={e => handleChangeScore(e)}>
                     <option value="">Elige una opción</option>  
@@ -75,19 +77,19 @@ export default function Filters(){
                     <option value='lowHigh'>Low to high</option>
                 </select>
             </section>
-            <section>
+            <section className={s.section}>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
-                    Diets
+                    <p className={s.title}>Diets</p>
                         {types.map(d => {
                             return(
-                                <div key={d.name}>
+                                <div className={s.checkbox} key={d.name}>
                                     <input type='checkbox' name="di" value={d.name} key={d.id} onChange={e=>handleChangeDiets(e)}/>
                                     {d.name}
                                 </div>
                             )}
                         )}
-                        <div key='all'>
-                            <input type='checkbox' id='all' value='all' onChange={e=>handleChangeDiets(e)}/>
+                        <div className={s.checkbox} key='all'>
+                            <input  type='checkbox' id='all' value='all' onChange={e=>handleChangeDiets(e)}/>
                             All types of Diet
                         </div>
                     </div>
